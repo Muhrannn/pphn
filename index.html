@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Echocardiography Report System
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>
+            ECHOCARDIOGRAPHY REPORT SYSTEM
+        </h1>
+
+        <!-- ================================= -->
+        <!-- STRUCTURAL -->
+        <!-- ================================= -->
+
+        <!-- ================================= -->
+<!-- PATIENT INFORMATION -->
+<!-- ================================= -->
+
+<div class="section">
+
+    <h2>
+        Patient Information
+    </h2>
+
+    <table>
+
+        <tr>
+
+            <!-- LEFT -->
+
+            <td style="width:50%;">
+
+                <div class="sub-section">
+
+                    Patient's Name :
+
+                    <input type="text"
+                           id="patient_name">
+
+                </div>
+
+                <div class="sub-section">
+
+                    NRM :
+
+                    <input type="text"
+                           id="nrm">
+
+                </div>
+
+                <div class="sub-section">
+
+                    Blood Pressure (MAP) :
+
+                    <input type="text"
+                           id="blood_pressure">
+
+                </div>
+
+                <div class="sub-section">
+
+                    O2 Supplementation :
+
+                    <select id="o2_type"
+                            onchange="toggleO2()">
+
+                        <option value="Spontan">
+                            Spontan
+                        </option>
+
+                        <option value="NC">
+                            NC
+                        </option>
+
+                        <option value="CPAP">
+                            CPAP
+                        </option>
+
+                        <option value="Ventilator">
+                            Ventilator
+                        </option>
+
+                    </select>
+
+                    <!-- VENTILATOR -->
+
+                    <span id="ventilator_box"
+                          style="display:none;">
+
+                        PEEP :
+
+                        <input type="text"
+                               id="peep"
+                               class="small-input">
+
+                        FiO2 :
+
+                        <input type="text"
+                               id="fio2"
+                               class="small-input">
+
+                        Flow :
+
+                        <input type="text"
+                               id="flow"
+                               class="small-input">
+
+                    </span>
+
+                </div>
+
+                <div class="sub-section">
+
+                    Indication :
+
+                    <input type="text"
+                           id="indication"
+                           style="width:400px;">
+
+                </div>
+
+            </td>
+
+            <!-- RIGHT -->
+
+            <td style="width:50%;">
+
+                <div class="sub-section">
+
+                    DOB (Age) :
+
+                    <input type="text"
+                           id="dob">
+
+                </div>
+
+                <div class="sub-section">
+
+                    Body Weight :
+
+                    <input type="text"
+                           id="weight"
+                           class="small-input">
+
+                    Height :
+
+                    <input type="text"
+                           id="height"
+                           class="small-input">
+
+                </div>
+
+                <div class="sub-section">
+
+                    O2 Saturation / HR :
+
+                    <input type="text"
+                           id="o2_sat"
+                           class="small-input">
+
+                    /
+
+                    <input type="text"
+                           id="hr"
+                           class="small-input">
+
+                </div>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+        <div class="section">
+
+            <h2>
+                Structural
+            </h2>
+
+            <table>
+
+                <!-- SITUS -->
+
+                <tr>
+
+                    <td class="label">
+                        Abdominal Situs
+                    </td>
+
+                    <td>
+
+                        <label>
+                            <input type="radio"
+                                   name="situs"
+                                   value="1"
+                                   checked>
+
+                            Situs Solitus
+                        </label>
+
+                        <label>
+                            <input type="radio"
+                                   name="situs"
+                                   value="2">
+
+                            Ambiguous
+                        </label>
+
+                        <label>
+                            <input type="radio"
+                                   name="situs"
+                                   value="3">
+
+                            Inversus
+                        </label>
+
+                    </td>
+
+                </tr>
+
+                <!-- ATRIAL -->
+
+                <tr>
+
+                    <td class="label">
+                        Atrial Situs
+                    </td>
+
+                    <td>
+
+                        <input type="text"
+                               id="atrial_situs"
+                               value="Atrial Situs">
+
+                    </td>
+
+                </tr>
+
+                <!-- AV -->
+
+                <tr>
+
+                    <td class="label">
+                        Atrioventricular Relationship
+                    </td>
+
+                    <td>
+
+                        <label>
+                            <input type="radio"
+                                   name="av"
+                                   value="1"
+                                   checked>
+
+                            AV Concordance
+                        </label>
+
+                        <label>
+                            <input type="radio"
+                                   name="av"
+                                   value="2">
+
+                            Discordance
+                        </label>
+
+                    </td>
+
+                </tr>
+
+                <!-- GREAT ARTERIES -->
+
+                <tr>
+
+                    <td class="label">
+                        Great Arteries
+                    </td>
+
+                    <td>
+
+                        <label>
+                            <input type="radio"
+                                   name="artery"
+                                   value="1"
+                                   checked>
+
+                            Normal Relationship
+                        </label>
+
+                        <label>
+                            <input type="radio"
+                                   name="artery"
+                                   value="2">
+
+                            Malposed
+                        </label>
+
+                        <label>
+                            <input type="radio"
+                                   name="artery"
+                                   value="3">
+
+                            Transposed
+                        </label>
+
+                    </td>
+
+                </tr>
+
+                <!-- HEART CHAMBERS -->
+
+                <tr>
+
+                    <td class="label">
+                        Heart Chambers
+                    </td>
+
+                    <td>
+
+                        <div class="grid">
+
+                            <!-- RA -->
+
+                            <div>
+
+                                <strong>RA :</strong>
+
+                                <select id="ra">
+
+                                    <option>
+                                        Normal
+                                    </option>
+
+                                    <option>
+                                        Dilated
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- RV -->
+
+                            <div>
+
+                                <strong>RV :</strong>
+
+                                <select id="rv">
+
+                                    <option>
+                                        Normal
+                                    </option>
+
+                                    <option>
+                                        Dilated
+                                    </option>
+
+                                    <option>
+                                        Hypertrophied
+                                    </option>
+
+                                    <option>
+                                        Apex Forming
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- LA -->
+
+                            <div>
+
+                                <strong>LA :</strong>
+
+                                <select id="la">
+
+                                    <option>
+                                        Normal
+                                    </option>
+
+                                    <option>
+                                        Dilated
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- LV -->
+
+                            <div>
+
+                                <strong>LV :</strong>
+
+                                <select id="lv">
+
+                                    <option>
+                                        Normal
+                                    </option>
+
+                                    <option>
+                                        Dilated
+                                    </option>
+
+                                    <option>
+                                        Hypertrophied
+                                    </option>
+
+                                    <option>
+                                        Apex Forming
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- IAS -->
+
+                <tr>
+
+                    <td class="label">
+                        Interatrial Septum
+                    </td>
+
+                    <td>
+
+                        <label>
+
+                            <input type="radio"
+                                   name="ias"
+                                   value="1"
+                                   checked
+                                   onchange="toggleASD()">
+
+                            Intact
+
+                        </label>
+
+                        <label>
+
+                            <input type="radio"
+                                   name="ias"
+                                   value="2"
+                                   onchange="toggleASD()">
+
+                            PFO
+
+                        </label>
+
+                        <label>
+
+                            <input type="radio"
+                                   name="ias"
+                                   value="3"
+                                   onchange="toggleASD()">
+
+                            ASD
+
+                        </label>
+
+                        <!-- ASD -->
+
+                        <div class="dynamic-box"
+                             id="asd-box">
+
+                            <input type="text"
+                                   id="asd_type"
+                                   placeholder="ASD Type">
+
+                            <input type="text"
+                                   id="asd_from"
+                                   placeholder="From">
+
+                            <input type="text"
+                                   id="asd_to"
+                                   placeholder="To">
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- IVS -->
+
+                <tr>
+
+                    <td class="label">
+                        Interventricular Septum
+                    </td>
+
+                    <td>
+
+                        <label>
+
+                            <input type="radio"
+                                   name="ivs"
+                                   value="1"
+                                   checked
+                                   onchange="toggleVSD()">
+
+                            Intact
+
+                        </label>
+
+                        <label>
+
+                            <input type="radio"
+                                   name="ivs"
+                                   value="2"
+                                   onchange="toggleVSD()">
+
+                            VSD
+
+                        </label>
+
+                        <!-- VSD -->
+
+                        <div class="dynamic-box"
+                             id="vsd-box">
+
+                            <input type="text"
+                                   id="vsd_type"
+                                   placeholder="VSD Type">
+
+                            <input type="text"
+                                   id="vsd_from"
+                                   placeholder="From">
+
+                            <input type="text"
+                                   id="vsd_to"
+                                   placeholder="To">
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            
+
+        </div>
+
+
+<!-- ================================= -->
+<!-- VALVULAR -->
+<!-- ================================= -->
+
+<tr>
+
+    <td class="label">
+        Valvular
+    </td>
+
+    <td>
+
+        <!-- ================================= -->
+        <!-- MITRAL -->
+        <!-- ================================= -->
+
+        <div class="sub-section">
+
+            <strong>
+                Mitral Valve :
+            </strong>
+
+            <label>
+
+                <input type="radio"
+                       name="mv"
+                       value="normal"
+                       checked
+                       onchange="toggleMV()">
+
+                Normal
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="mv"
+                       value="stenotic"
+                       onchange="toggleMV()">
+
+                Stenotic Valvar
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="mv"
+                       value="sub"
+                       onchange="toggleMV()">
+
+                Sub Valvar
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="mv"
+                       value="insuff"
+                       onchange="toggleMV()">
+
+                Insufficiency
+
+            </label>
+
+            <!-- PG -->
+
+            <span id="mv_pg_box"
+                  style="display:none;">
+
+                PG :
+
+                <input type="text"
+                       id="mv_pg"
+                       class="small-input">
+
+                mmHG
+
+            </span>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- TRICUSPID -->
+        <!-- ================================= -->
+
+        <div class="sub-section">
+
+            <strong>
+                Tricuspid Valve :
+            </strong>
+
+            <label>
+
+                <input type="radio"
+                       name="tv"
+                       value="normal"
+                       checked
+                       onchange="toggleTV()">
+
+                Normal
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="tv"
+                       value="stenotic"
+                       onchange="toggleTV()">
+
+                Stenotic Valvar
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="tv"
+                       value="sub"
+                       onchange="toggleTV()">
+
+                Sub Valvar
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="tv"
+                       value="insuff"
+                       onchange="toggleTV()">
+
+                Insufficiency
+
+            </label>
+
+            <!-- PG -->
+
+            <span id="tv_pg_box"
+                  style="display:none;">
+
+                PG :
+
+                <input type="text"
+                       id="tv_pg"
+                       class="small-input">
+
+                mmHG
+
+            </span>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- AORTIC -->
+        <!-- ================================= -->
+
+        <div class="sub-section">
+
+            <strong>
+                Aortic Valve :
+            </strong>
+
+            <label>
+
+                <input type="radio"
+                       name="avv"
+                       value="normal"
+                       checked
+                       onchange="toggleAVV()">
+
+                Normal
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="avv"
+                       value="stenotic"
+                       onchange="toggleAVV()">
+
+                Stenotic Valvar
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="avv"
+                       value="sub"
+                       onchange="toggleAVV()">
+
+                Sub Valvar
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="avv"
+                       value="insuff"
+                       onchange="toggleAVV()">
+
+                Insufficiency
+
+            </label>
+
+            <!-- PG -->
+
+            <span id="avv_pg_box"
+                  style="display:none;">
+
+                PG :
+
+                <input type="text"
+                       id="avv_pg"
+                       class="small-input">
+
+                mmHG
+
+            </span>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- PULMONARY -->
+        <!-- ================================= -->
+
+        <div class="sub-section">
+
+            <strong>
+                Pulmonary Valve :
+            </strong>
+
+            <label>
+
+                <input type="radio"
+                       name="pv"
+                       value="normal"
+                       checked
+                       onchange="togglePV()">
+
+                Normal
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="pv"
+                       value="stenotic"
+                       onchange="togglePV()">
+
+                Stenotic Valvar
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="pv"
+                       value="sub"
+                       onchange="togglePV()">
+
+                Sub Valvar
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="pv"
+                       value="insuff"
+                       onchange="togglePV()">
+
+                Insufficiency
+
+            </label>
+
+            <!-- PG -->
+
+            <span id="pv_pg_box"
+                  style="display:none;">
+
+                PG :
+
+                <input type="text"
+                       id="pv_pg"
+                       class="small-input">
+
+                mmHG
+
+            </span>
+
+        </div>
+
+    </td>
+
+<!-- ================================= -->
+<!-- SYSTEMIC VEIN -->
+<!-- ================================= -->
+
+<tr>
+
+    <td class="label">
+        Systemic Vein
+    </td>
+
+    <td>
+
+        SVC :
+
+        <select id="svc">
+
+            <option>
+                Normal
+            </option>
+
+            <option>
+                Interrupted
+            </option>
+
+        </select>
+
+        IVC :
+
+        <select id="ivc">
+
+            <option>
+                Normal
+            </option>
+
+            <option>
+                Interrupted
+            </option>
+
+        </select>
+
+    </td>
+
+</tr>
+
+<!-- ================================= -->
+<!-- PULMONARY VEIN -->
+<!-- ================================= -->
+
+<tr>
+
+    <td class="label">
+        Pulmonary Vein
+    </td>
+
+    <td>
+
+        <select id="pulmonary_vein"
+        onchange="togglePulmonaryVein()">
+
+            <option>
+                Normal
+            </option>
+
+            <option>
+                PAPVD
+            </option>
+
+            <option>
+                TAPVD
+            </option>
+
+        </select>
+
+        <select id="tapvd_type"
+        style="display:none;">
+
+            <option>
+                Supracardiac
+            </option>
+
+            <option>
+                Infracardiac
+            </option>
+
+            <option>
+                Cardiac
+            </option>
+
+        </select>
+
+    </td>
+
+</tr>
+
+<!-- ================================= -->
+<!-- AORTA -->
+<!-- ================================= -->
+
+<tr>
+
+    <td class="label">
+        Aorta
+    </td>
+
+    <td>
+
+        Arch :
+
+        <select id="arch">
+
+            <option>
+                Left
+            </option>
+
+            <option>
+                Right
+            </option>
+
+        </select>
+
+        <select id="aorta_type"
+        onchange="toggleAorta()">
+
+    <option>
+        Normal Branching
+    </option>
+
+    <option>
+        Coarctation
+    </option>
+
+    <option>
+        IAA
+    </option>
+
+</select>
+
+<!-- COARCTATION -->
+
+<span id="coarc_box"
+      style="display:none;">
+
+    <select id="coarc_type">
+
+        <option>
+            Discreet
+        </option>
+
+        <option>
+            Long Segment
+        </option>
+
+    </select>
+
+</span>
+
+<!-- IAA -->
+
+<span id="iaa_box"
+      style="display:none;">
+
+    IAA Type :
+
+    <input type="text"
+           id="iaa_type"
+           class="small-input">
+
+</span>
+<!-- ================================= -->
+<!-- PULMONARY ARTERY -->
+<!-- ================================= -->
+
+<tr>
+    <br><br>
+    <td class="label">
+        Pulmonary Artery
+    </td>
+
+    <td>
+
+ <div class="sub-section">
+
+    MPA :
+
+    <select id="mpa"
+            onchange="toggleMPA()">
+
+        <option>
+            Normal
+        </option>
+
+        <option>
+            Dilated
+        </option>
+
+        <option>
+            Stenotic
+        </option>
+
+    </select>
+
+    <!-- MM -->
+
+    <span id="mpa_mm_box"
+          style="display:none;">
+
+        <input type="text"
+               class="small-input"
+               placeholder="mm">
+
+    </span>
+
+</div>
+
+        <div class="sub-section" id="pa_branch">
+
+            PA Branch :
+
+            <select>
+
+                <option>
+                    Confluent
+                </option>
+
+                <option>
+                    Non Confluent
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="sub-section">
+
+            RPA :
+
+            <select id="rpa"
+            onchange="toggleRPA()">
+
+                <option>
+                    Normal
+                </option>
+
+                <option>
+                    Dilated
+                </option>
+
+                <option>
+                    Stenotic
+                </option>
+
+            </select>
+<span id="rpa_extra"
+      style="display:none;">
+
+    <select id="rpa_position"
+            onchange="toggleRPAMM()">
+
+        <option>
+            Distal
+        </option>
+
+        <option>
+            Proximal
+        </option>
+
+    </select>
+
+    <span id="rpa_mm"
+          style="display:none;">
+
+        <input type="text"
+               class="small-input"
+               placeholder="mm">
+
+    </span>
+
+</span>
+        </div>
+
+<div class="sub-section">
+
+    LPA :
+
+    <select id="lpa"
+            onchange="toggleLPA()">
+
+        <option>
+            Normal
+        </option>
+
+        <option>
+            Dilated
+        </option>
+
+        <option>
+            Stenotic
+        </option>
+
+    </select>
+
+    <!-- EXTRA -->
+
+    <span id="lpa_extra"
+          style="display:none;">
+
+        <select id="lpa_position"
+                onchange="toggleLPAMM()">
+
+            <option>
+                Distal
+            </option>
+
+            <option>
+                Proximal
+            </option>
+
+        </select>
+
+        <!-- MM -->
+
+        <span id="lpa_mm"
+              style="display:none;">
+
+            <input type="text"
+                   class="small-input"
+                   placeholder="mm">
+
+        </span>
+
+    </span>
+
+</div>
+
+    </td>
+
+</tr>
+
+<!-- ================================= -->
+<!-- DUCTUS -->
+<!-- ================================= -->
+
+<tr>
+
+    <td class="label">
+        Ductus Arteriosus
+    </td>
+
+    <td>
+
+        <select id="ductus"
+        onchange="toggleDuctus()">
+
+            <option>
+                Closed
+            </option>
+
+            <option>
+                Tubular
+            </option>
+
+            <option>
+                Conical
+            </option>
+
+            <option>
+                Saccular
+            </option>
+
+            <option>
+                Fetal
+            </option>
+
+            <option>
+                Window
+            </option>
+
+            <option>
+                Elongated
+            </option>
+
+        </select>
+
+    </td>
+</table>
+</tr>
+
+<!-- ================================= -->
+<!-- HEMODYNAMIC -->
+<!-- ================================= -->
+
+<div class="section">
+
+    <h2>
+        Hemodynamic
+    </h2>
+
+    <table>
+
+        <!-- ================================= -->
+        <!-- CHAMBERS -->
+        <!-- ================================= -->
+
+        <tr>
+
+            <td class="label">
+                Chambers
+            </td>
+
+            <td>
+
+                RV/LV :
+
+                <select id="rvlv">
+
+                    <option>
+                        Normal
+                    </option>
+
+                    <option>
+                        Dilated
+                    </option>
+
+                </select>
+
+                Septal :
+
+                <select id="septal">
+
+                    <option>
+                        Normal
+                    </option>
+
+                    <option>
+                        Flat
+                    </option>
+
+                    <option>
+                        Bowing
+                    </option>
+
+                </select>
+
+                LV-sEI :
+
+                <input type="text"
+                       class="small-input"
+                       id="lvsei">
+
+                <br><br>
+
+                TV Annulus :
+
+                <input type="text"
+                       class="small-input"
+                       id="tv_annulus">
+
+                mm
+
+                MV Annulus :
+
+                <input type="text"
+                       class="small-input"
+                       id="mv_annulus">
+
+                mm
+
+            </td>
+
+        </tr>
+
+        <!-- ================================= -->
+        <!-- CONTRACTILITY -->
+        <!-- ================================= -->
+
+        <tr>
+
+            <td class="label">
+                Contractility
+            </td>
+
+            <td>
+
+                LV EF :
+
+                <input type="text"
+                       class="small-input"
+                       id="ef">
+
+                %
+
+                FS :
+
+                <input type="text"
+                       class="small-input"
+                       id="fs">
+
+                %
+
+                <br><br>
+
+                RV TAPSE :
+
+                <input type="text"
+                       class="small-input"
+                       id="tapse">
+
+                mm
+
+                S/D Ratio :
+
+                <input type="text"
+                       class="small-input"
+                       id="sd_ratio">
+
+                FAC :
+
+                <input type="text"
+                       class="small-input"
+                       id="fac">
+
+                %
+
+                MPI :
+
+                <input type="text"
+                       class="small-input"
+                       id="mpi">
+
+                <br><br>
+
+                PAAT/RVET :
+
+                <input type="text"
+                       class="small-input"
+                       id="paat_rvet">
+
+            </td>
+
+        </tr>
+
+        <!-- ================================= -->
+        <!-- STRAIN -->
+        <!-- ================================= -->
+
+        <tr>
+
+            <td class="label">
+                Strain
+            </td>
+
+            <td>
+
+                <strong>
+                    LV GLS
+                </strong>
+
+                <br><br>
+
+                Free Wall :
+
+                <input type="text"
+                       class="small-input"
+                       id="lv_freewall">
+
+                %
+
+                Septal :
+
+                <input type="text"
+                       class="small-input"
+                       id="lv_septal">
+
+                %
+
+                Global :
+
+                <input type="text"
+                       class="small-input"
+                       id="lv_global">
+
+                %
+
+                <br><br>
+
+                <strong>
+                    RV GLS
+                </strong>
+
+                <br><br>
+
+                Free Wall :
+
+                <input type="text"
+                       class="small-input"
+                       id="rv_freewall">
+
+                %
+
+                Septal :
+
+                <input type="text"
+                       class="small-input"
+                       id="rv_septal">
+
+                %
+
+                Global :
+
+                <input type="text"
+                       class="small-input"
+                       id="rv_global">
+
+                %
+
+            </td>
+
+        </tr>
+
+        <!-- ================================= -->
+        <!-- PDA -->
+        <!-- ================================= -->
+
+        <tr>
+
+    <td class="label">
+        PDA
+    </td>
+
+    <td>
+
+        <select id="pda"
+                onchange="togglePDA()">
+
+            <option>
+                No PDA
+            </option>
+
+            <option>
+                PDA
+            </option>
+
+        </select>
+
+        <!-- PDA DETAIL -->
+
+        <span id="pda_box"
+              style="display:none;">
+
+            <input type="text"
+                   class="small-input"
+                   id="pda_mm"
+                   placeholder="mm">
+
+            Flow :
+
+            <select id="pda_flow">
+
+                <option>
+                    L to R
+                </option>
+
+                <option>
+                    R to L
+                </option>
+
+                <option>
+                    Bidirectional
+                </option>
+
+            </select>
+
+            PG :
+
+            <input type="text"
+                   class="small-input"
+                   id="pda_pg"
+                   placeholder="mmHG">
+
+            Vmax :
+
+            <input type="text"
+                   class="small-input"
+                   id="pda_vmax"
+                   placeholder="M/s">
+
+        </span>
+
+    </td>
+
+</tr>
+
+
+        <!-- ================================= -->
+        <!-- LEFT HEART VOLUME LOAD -->
+        <!-- ================================= -->
+
+        <tr>
+
+            <td class="label">
+                Left Heart Volume Load
+            </td>
+
+            <td>
+
+                LA/AO :
+
+                <input type="text"
+                       class="small-input"
+                       id="la_ao">
+
+                IVRT :
+
+                <input type="text"
+                       class="small-input"
+                       id="ivrt">
+
+                <br><br>
+
+                MV E/A :
+
+                <input type="text"
+                       class="small-input"
+                       id="mvea">
+
+                Pulmonary Venous Flow :
+
+                    <select id="pv_flow"
+                            onchange="togglePVFlow()">
+
+                        <option>
+                            Non Pulsatile
+                        </option>
+
+                        <option>
+                            Pulsatile
+                        </option>
+
+                    </select>
+
+                    <!-- VELOCITY -->
+
+                    <span id="pv_velocity_box"
+                        style="display:none;">
+
+                        <input type="text"
+                            class="small-input"
+                            id="pv_flow_velocity">
+
+                        cm/s
+
+                    </span>
+                
+
+            </td>
+
+        </tr>
+
+        <!-- ================================= -->
+        <!-- PA FLOW -->
+        <!-- ================================= -->
+
+        <tr>
+
+            <td class="label">
+                Pulmonary Artery Flow
+            </td>
+
+            <td>
+
+                Peak Systolic Velocity :
+
+                <input type="text"
+                       class="small-input"
+                       id="peak_velocity">
+
+                cm/s
+
+                <br><br>
+
+                End Diastolic Velocity :
+
+                <input type="text"
+                       class="small-input"
+                       id="end_velocity">
+
+                cm/s
+
+                <br><br>
+
+                <select id="pa_flow_type">
+
+                    <option>
+                        Normal
+                    </option>
+
+                    <option>
+                        Turbulent
+                    </option>
+
+                </select>
+
+            </td>
+
+        </tr>
+
+        <!-- ================================= -->
+        <!-- OTHER -->
+        <!-- ================================= -->
+
+        <tr>
+
+            <td class="label">
+                Other
+            </td>
+
+            <td>
+
+                <textarea id="other_findings"
+                          rows="5"></textarea>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+        <!-- ================================= -->
+        <!-- BUTTON -->
+        <!-- ================================= -->
+
+        <div class="button-group">
+
+            <button onclick="generateReport()">
+                Generate Report
+            </button>
+
+            <button onclick="copyReport()">
+                Copy Report
+            </button>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- REPORT -->
+        <!-- ================================= -->
+
+        <textarea id="report"></textarea>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

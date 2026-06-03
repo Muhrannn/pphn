@@ -1,0 +1,227 @@
+body{
+
+    font-family:Arial, sans-serif;
+    background:#e2e8f0;
+    color:#1e293b;
+    margin:0;
+    padding:30px;
+
+}
+
+.container{
+
+    max-width:1400px;
+    margin:auto;
+
+}
+
+h1{
+
+    margin-bottom:30px;
+    color:#0f172a;
+    font-size:36px;
+
+}
+
+.section{
+
+    background:#ffffff;
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.08);
+
+}
+
+.section h2{
+
+    color:#2563eb;
+    margin-bottom:20px;
+    border-bottom:
+    2px solid #dbeafe;
+    padding-bottom:10px;
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+td{
+
+    border:1px solid #cbd5e1;
+    padding:18px;
+    vertical-align:top;
+
+}
+
+table tr{
+
+    transition:0.2s;
+
+}
+
+table tr:hover{
+
+    background:#f8fafc;
+
+}
+
+.label{
+
+    width:300px;
+    font-weight:bold;
+    background:#f1f5f9;
+    color:#0f172a;
+
+}
+
+label{
+
+    margin-right:20px;
+    cursor:pointer;
+
+}
+
+input[type="text"],
+select,
+textarea{
+
+    padding:10px 14px;
+    border:
+    1px solid #cbd5e1;
+    border-radius:10px;
+    background:#f8fafc;
+    color:#0f172a;
+    margin-top:10px;
+    outline:none;
+    transition:0.2s;
+
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus{
+
+    border-color:#3b82f6;
+    box-shadow:
+    0 0 0 3px rgba(59,130,246,0.2);
+
+}
+
+.small-input{
+
+    width:90px;
+    padding:8px;
+
+}
+
+input[type="radio"]{
+
+    margin-right:5px;
+    accent-color:#2563eb;
+
+}
+
+.dynamic-box{
+
+    display:none;
+    margin-top:15px;
+    gap:10px;
+    flex-wrap:wrap;
+
+}
+
+.dynamic-box input{
+
+    background:#ffffff;
+
+}
+
+.grid{
+
+    display:grid;
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.sub-section{
+
+    margin-bottom:18px;
+    line-height:2;
+
+}
+
+.button-group{
+
+    margin-top:25px;
+    margin-bottom:25px;
+
+}
+
+button{
+
+    padding:14px 26px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    margin-right:12px;
+    font-size:15px;
+    font-weight:bold;
+    transition:0.2s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+    transform:translateY(-2px);
+
+}
+
+textarea{
+
+    width:100%;
+    height:400px;
+    resize:vertical;
+    font-size:15px;
+    line-height:1.6;
+    background:#ffffff;
+
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media(max-width:900px){
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    td{
+
+        display:block;
+        width:100%;
+
+    }
+
+    .label{
+
+        width:100%;
+
+    }
+
+}
