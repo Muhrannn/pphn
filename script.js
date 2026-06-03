@@ -666,10 +666,72 @@ document.getElementById(
     "nrm"
 ).value;
 
+const atrialSitus =
+document.querySelector(
+    'input[name="atrial_situs"]:checked'
+).value;
+
 const bloodPressure =
 document.getElementById(
     "blood_pressure"
 ).value;
+
+// =================================
+// GREAT ARTERIES
+// =================================
+
+const arteryChoice =
+document.querySelector(
+    'input[name="artery"]:checked'
+).value;
+
+let greatArteries = "";
+
+if(arteryChoice === "1"){
+
+    greatArteries =
+    "Normal Relationship";
+
+}
+
+else if(arteryChoice === "2"){
+
+    greatArteries =
+    "Malposed";
+
+}
+
+else{
+
+    greatArteries =
+    "Transposed";
+
+}
+
+// =================================
+// HEART CHAMBERS
+// =================================
+
+const ra =
+document.getElementById(
+    "ra"
+).value;
+
+const rv =
+document.getElementById(
+    "rv"
+).value;
+
+const la =
+document.getElementById(
+    "la"
+).value;
+
+const lv =
+document.getElementById(
+    "lv"
+).value;
+
 
 const o2Type =
 document.getElementById(
@@ -737,8 +799,6 @@ document.getElementById(
     "hr"
 ).value;
 
-
-
     const situsChoice =
     document.querySelector(
         'input[name="situs"]:checked'
@@ -792,6 +852,7 @@ document.getElementById(
 
     }
 
+    
     // =================================
     // IAS
     // =================================
@@ -1499,7 +1560,17 @@ STRUCTURAL
 
 Abdominal Situs : ${situs}
 
+Atrial Situs : ${atrialSitus}
+
 Atrioventricular Relationship : ${av}
+
+Great Arteries : ${greatArteries}
+
+Heart Chambers :
+RA ${ra},
+RV ${rv},
+LA ${la},
+LV ${lv}
 
 Interatrial Septum : ${ias}
 
