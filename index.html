@@ -996,35 +996,34 @@
 
         <select id="arch">
 
-            <option>
+            <option value="Left">
                 Left
             </option>
 
-            <option>
+            <option value="Right">
                 Right
             </option>
 
         </select>
 
-        <select id="aorta_type"
+        <!-- AORTA TYPE -->
+
+<select id="aorta_type"
         onchange="toggleAorta()">
 
-    <option>
+    <option value="Normal Branching">
         Normal Branching
     </option>
 
-    <option>
+    <option value="Coarctation">
         Coarctation
     </option>
 
-    <option>
+    <option value="IAA">
         IAA
     </option>
 
 </select>
-</td>
-</tr>
-
 
 <!-- COARCTATION -->
 
@@ -1033,11 +1032,11 @@
 
     <select id="coarc_type">
 
-        <option>
+        <option value="Discreet">
             Discreet
         </option>
 
-        <option>
+        <option value="Long Segment">
             Long Segment
         </option>
 
@@ -1049,14 +1048,17 @@
 
 <span id="iaa_box"
       style="display:none;">
-
-    IAA Type :
-
+    Type:
     <input type="text"
            id="iaa_type"
            class="small-input">
 
 </span>
+
+    </td>
+
+</tr>
+
 <!-- ================================= -->
 <!-- PULMONARY ARTERY -->
 <!-- ================================= -->

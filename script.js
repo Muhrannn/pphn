@@ -133,32 +133,38 @@ function toggleAorta(){
         "aorta_type"
     ).value;
 
-    const coarc =
+    const coarcBox =
     document.getElementById(
         "coarc_box"
     );
 
-    const iaa =
+    const iaaBox =
     document.getElementById(
         "iaa_box"
     );
 
-    coarc.style.display =
+    // reset dulu
+
+    coarcBox.style.display =
     "none";
 
-    iaa.style.display =
+    iaaBox.style.display =
     "none";
+
+    // coarctation
 
     if(value === "Coarctation"){
 
-        coarc.style.display =
+        coarcBox.style.display =
         "inline-block";
 
     }
 
+    // iaa
+
     else if(value === "IAA"){
 
-        iaa.style.display =
+        iaaBox.style.display =
         "inline-block";
 
     }
@@ -228,6 +234,8 @@ function toggleTV(){
     }
 
 }
+
+
 
 // =====================================
 // PDA
@@ -447,41 +455,6 @@ function toggleRPAMM(){
 
 }
 
-function toggleAorta(){
-
-    const value =
-    document.getElementById(
-        "aorta_type"
-    ).value;
-
-    const coarc =
-    document.getElementById(
-        "coarc_box"
-    );
-
-    const iaa =
-    document.getElementById(
-        "iaa_box"
-    );
-
-    coarc.style.display = "none";
-    iaa.style.display = "none";
-
-    if(value === "Coarctation"){
-
-        coarc.style.display =
-        "inline-block";
-
-    }
-
-    else if(value === "IAA"){
-
-        iaa.style.display =
-        "inline-block";
-
-    }
-
-}
 
 function toggleMPA(){
 
@@ -1214,6 +1187,7 @@ else{
     `${arch} Arch, IAA Type ${iaa}`;
 
 }
+
 
 const mpa =
 document.getElementById(
