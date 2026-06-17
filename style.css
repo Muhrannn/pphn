@@ -8,6 +8,47 @@ body{
 
 }
 
+.header-kop{
+
+    background:white;
+    padding:8px 20px;
+    border-radius:12px;
+    margin-bottom:20px;
+
+}
+
+.header-kop img{
+
+    width:100%;
+    max-height:120px;
+    object-fit:contain;
+    display:block;
+    margin:auto;
+
+}
+
+.title-bar{
+
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:25px;
+
+}
+
+.header-kop img{
+
+    width:100%;
+    max-width:1200px;
+    height:auto;
+
+}
+
+
 .container{
 
     max-width:1400px;
